@@ -1,0 +1,176 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>vCard QR Code Generator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate your Vcard QR Code easily.">
+    <meta name="keywords" content="vCard, QR Code, qr code, qr-code, QR-Code, QR, Code, QR Code Generator, Barcode, QR" />
+
+     <!-- Twitter Card -->
+     <meta name="twitter:title" content="" />
+     <meta name="twitter:site" content="@akoji_f" />
+     <meta name="twitter:creator" content="@akoji_f" />
+     <meta name="twitter:description" content="Generate your vCard QR Code easily" />
+     <meta name="twitter:image" content="images/logo.png" />
+     <meta name="twitter:card" content="images/logo.png" />
+     <!-- Open Graph -->
+     <meta property="og:image" content="images/logo.png" />
+     <meta property="og:title" content="vCard QR Code Generator" />
+     <meta property="og:description" content="Generate your vCard QR Code easily" />
+     <meta name="author" content="Francis Akoji" />
+     <meta property="og:url" content="https://vcard-qrcode-gen.netlify.app" />
+     <meta property="og:site_name" content="vCard QR Code Generator" />
+    
+     <!--Stylesheet-->
+    <link rel="stylesheet" href="./css/pure-min.css">
+    <link rel="stylesheet" href="./css/grids-responsive-min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!--Scripts-->
+    <!--script type="text/javascript" src="./js/grids.js"></script>
+    <script type="text/javascript" src="./js/menus.js"></script>
+    <script type="text/javascript" src="./js/track-downloads.js"></script>
+    <script type="text/javascript" src="./js/ui.js"></script-->
+    <script type="text/javascript" src="./js/app.js"></script>
+    <script type="text/javascript" src="./js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="./js/jquery.qrcode.min.js"></script>
+
+</head>
+<body>
+
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="">vCard QR Code Generator</a>
+    </div>
+</div>
+
+<section id="about">
+    <div class="ribbon l-box-lrg pure-g">
+        <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+            <img width="300" alt="File Icons" class="pure-img-responsive" src="./images/qrcode.jpg">
+        </div>
+        <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+
+            <h2 class="content-head content-head-ribbon">What is a vCard QR Code?</h2>
+
+            <p>
+                vCard, also known as VCF (Virtual Contact File)  and "QR" stands for "Quick Response", which refers to the instant access to the information hidden in the Code.
+                </p>
+
+            <p>
+                QR Code is a two-dimensional version of the barcode, typically made up of black and white pixel patterns.
+            </p>
+            <p>
+                vCard QR Code stores basic information such as your full name, contact info, job title, work or home address, and your website URL.
+            </p>
+            
+        </div>
+    </div>
+</section>
+
+    <section id="vcard-qr">
+    <div class="content">
+        <h2 class="content-head is-center">Fill the Form Below</h2>
+
+        <div class="pure-g">
+            <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+                <form class="pure-form pure-form-stacked" method="POST">
+                    <fieldset class="group">
+
+                        <label for="firstName">First Name</label>
+                        <input id="firstName" type="text" value="" placeholder="Your First Name" required="">
+
+                        <label for="lastName">Last Name</label>
+                        <input id="lastName" type="text" value="" placeholder="Your Last Name" required="">
+
+                        <label for="phoneNo">Phone Number</label>
+                        <input id="phoneNo" type="number" value="" placeholder="Your Phone Number" required="">
+
+                        <label for="org">Your Email</label>
+                        <input id="email" type="email" value="" placeholder="Your Email" required="">
+
+                        <label for="org">Organization</label>
+                        <input id="org" type="text" value="" placeholder="Your Organization Name" required="">
+
+                        <label for="org">Job Title</label>
+                        <input id="title" type="text" value="" placeholder="Your Job Title" required="">
+
+                        <label for="org">Website</label>
+                        <input id="url" type="url" value="" placeholder="Your Website" required="">
+
+                        <label for="org">Facebook </label>
+                        <input id="facebook" type="url" value="" placeholder="Your Facebook URL">
+
+                        <label for="org">Twitter</label>
+                        <input id="twitter" type="url" value="" placeholder="Your Twitter URL">
+
+                        <label for="org">Instagram</label>
+                        <input id="instagram" type="url" value="" placeholder="Your Instagram URL">
+
+                        <label for="org">Address Line1 </label>
+                        <input id="address1" type="text" value="" placeholder="Your Address" required="">
+
+                        <label for="org">Address Line2</label>
+                        <input id="address2" type="text" value="" placeholder="Your Address">
+
+                        <label for="org">City</label>
+                        <input id="city" type="text" value="" placeholder="Your City" required="">
+
+                        <label for="org">State</label>
+                        <input id="state" type="text" value="" placeholder="Your State" required="">
+
+                        <label for="org">Country</label>
+                        <input id="country" type="text" value="" placeholder="Your Country" required="">
+
+                        <label for="org">Postal Code</label>
+                        <input id="zipCode" type="text" value="" placeholder="Your Postal Code" required="">
+
+                        <input type="button" value="Embed Vcard in QRCode" class="pure-button" onclick="javascript:generateQRCode();">
+                    </fieldset>
+                </form>
+            </div>
+
+
+            
+            <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+                <div style="display:none;" id="vcardDiv">
+                    <h3>vCard Created Successfully !!!!!! </h3>
+                    <textarea rows="13" cols="40" style='display:none;' id="vcard" border="2">
+                    </textarea><BR>
+                    <H3>vCard Embedded QR Code Image</H3> </div>
+                    <div style="display:inline;" id="sampleQR">
+                    </div>
+                    <img id='qrImage' style='display:inline;'
+                    src='https://chart.googleapis.com/chart?cht=qr&choe=UTF-8&chs=200x200&chl=https%3A%2F%2Frotechnica.com'/>
+
+                    <input type="button" value="Download" class="pure-button" onclick="javascript:downloadQR();">
+
+                <h4>What is the minimum size of a QR Code</h4>
+                <p>
+                    If you are printing on small to medium-sized merchandise (ex: business cards or flyers), your Codes should be at least 2 x 2 cm (around 0.8 x 0.8 in).
+                </p>
+
+                <h4>How do I Scan QR Codes?</h4>
+                <p>
+                    Depending on your device, you might already have a built-in QR Code reader or scanner. Open the camera app on your mobile phone and hold it over a Code for a few seconds until a notification pops up. 
+                </p>
+                <p>
+                    If this doesn’t happen, check your settings and see if QR Code scanning is enabled. Still not working? Don’t worry, all you have to do now is install third-party QR Code readers from your app stores.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    </section>
+
+    <div class="footer l-box is-center">
+        Made With 💙 and ☕ by <a href="https://rotechnica.com"  style="text-decoration: none" >ROTechnica.</a>
+    </div>
+
+</div>
+
+</body>
+</html>
